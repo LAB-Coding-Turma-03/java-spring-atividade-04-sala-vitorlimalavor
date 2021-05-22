@@ -9,26 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/atividades")
 public class RepeticaoController {
-
-	@GetMapping("/repeticao")
-	public ResponseEntity<String> simularValores(@RequestParam(name="numero") int numero) {
-		/*
-		 * Elabore um algoritmo para contar até o numero que foi recebido 
-		 * na variavel numero.
-		 * 
-		 * Exemplo de retorno:
-		 * 
-		 * Entrada:
-		 * numero = 10
-		 * 
-		 * Saida:
-		 * 12345678910
-		 * 
-		 *  
-		 */
-		
-		
-		return ResponseEntity.ok(<APÓS O ALGORITMO COLOCAR A VARIAVEL String DE RETORNO AQUI>);
-	}
-	
+    @GetMapping("/repeticao")
+    public ResponseEntity<String> simularValores(@RequestParam(name="numero") int numero){         
+        String ret = new String();
+        for (int i = 1; i <= numero; i++){
+            ret = ret + i;
+        }
+   
+       return ResponseEntity.ok(ret);
+   }	
 }
